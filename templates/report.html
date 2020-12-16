@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>源瑞工作报告提交系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- styles -->
+    <link href="../static/css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="login-bg">
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Logo -->
+                <div class="logo">
+                    <h1><a>源瑞工作报告提交系统</a></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-content container text-center">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="login-wrapper">
+                <div class="box">
+                    <div class="content-wrap">
+                        <h6>月度/年度报告</h6>
+                        <form name="report-form" method="post" action="/report">
+                            <input name="title" class="form-control" required=required type="title"
+                                   placeholder="Report title">
+                            <textarea rows="3" cols="20" wrap="hard" name="content" required class="form-control"
+                                      type="content" placeholder="Report content" maxlength="300"
+                                      style="margin-top: 10px"></textarea>
+                            <select name="reportType">
+                                <option value="1">月度报告</option>
+                                <option value="2">年度报告</option>
+                            </select>
+                            <select name="receiverIds">
+                                <option value="4">颜赵东</option>
+                                <option value="80">陈源祚</option>
+                                <option value="76">廖峰</option>
+                                <option value="78">文家富</option>
+                            </select>
+                            <br>
+                            {{ msg }}
+                            <div class="action"
+                                 style="position: absolute;text-align: left;z-index: 1;top: 234px;left: 40%">
+                                <button type="submit" class="btn btn-primary signup">提交报告</button>
+                            </div>
+                        </form>
+                        <form name="report-form" method="post" action="/loginout">
+                            <div class="action" style="position: absolute;z-index: 2;left: 82%;">
+                                <button type="submit" class="btn btn-primary signup">退出登录</button>
+                            </div>
+                        </form>
+                        <form name="report-form1" method="post" action="/backup">
+                            <div class="action" style="position: absolute;top: 80%;left: 50%;z-index: 3;">
+                                <button type="submit" class="btn btn-primary signup">返回上级</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/custom.js"></script>
+
+<footer>
+    <div class="container">
+        <div class="copy text-center">
+            Copyright 2020 develop by YuanRuiTeam
+        </div>
+
+    </div>
+</footer>
+</body>
+</html>
