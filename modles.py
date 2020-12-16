@@ -24,14 +24,3 @@ class User(Base):
     def __repr__(self):
         return "<User(id='%s', loginnum='%s',password='%s')>" % (
             self.id, self.loginnum, self.password)
-
-
-db = sql_connect()
-db_add = User(loginnum="a123",password="123")
-db.add(db_add)
-db.commit()
-db.close()
-
-db_user = db.query(User).filter().all()
-db.delete(db_user)
-db.commit()
