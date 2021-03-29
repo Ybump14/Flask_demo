@@ -19,8 +19,9 @@ def request_headers():
         "Pragma": "no-cache",
         "Cache-Control": "no-cache",
     }
-    url = "http://192.168.1.110:4200"
-
+    # url = "http://192.168.1.110:4200"
+    url = "https://oamng.yuanruiteam.com"
+    # url = "https://test-oamng.yuanruiteam.com"
     return {
         "headers": headers,
         "url": url
@@ -57,9 +58,7 @@ def decode(key, data):
 
 
 def get_response(data):
+    response = data
     if "randomId" in data:
         response = json.loads(decode(data["randomId"], data["encryptData"]))
-        return response
-    else:
-        response = data
-        return response
+    return response
